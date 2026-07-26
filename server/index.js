@@ -49,12 +49,16 @@ function cleanText(value, maxLength) {
   return typeof value === 'string' ? value.trim().slice(0, maxLength) : '';
 }
 
-app.get('/health', async (_request, response) => {
+app.get('/health', async (_req, res) => {
   try {
     await transporter.verify();
-    response.status(200).json({ status: 'ok' });
-  } catch {
-    response.status(503).json({ status: 'email service unavailable' });
+    res.status(200).json({ status: 'ok' });
+  } catch (error) {
+    console.error("SMTP verify failed:", error);
+    res.status(503).json({
+      status: "email service unavailable",
+      error: error.message,
+    });
   }
 });
 
