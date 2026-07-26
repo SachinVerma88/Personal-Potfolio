@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 9 9 11;
+  --foreground: 237 237 239;
+  --surface-base: 14 14 17;
+  --surface-elevated: 18 18 21;
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.18);
+  --accent-sky: 56 189 248;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: auto; /* Handled smoothly by Lenis */
+  }
+
+  body {
+    @apply bg-[#09090b] text-[#EDEDEF] font-sans antialiased selection:bg-sky-500/20 selection:text-sky-300;
+    background-image: 
+      radial-gradient(at 50% 0%, rgba(56, 189, 248, 0.04) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Glassmorphism & Elevation System */
+.glass-panel {
+  background: rgba(14, 14, 17, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(18, 18, 21, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* Global focus-visible ring utility matching ui-ux-pro-max standard */
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090b];
+}
+
+/* Restrained accent text glow */
+.text-accent-glow {
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
