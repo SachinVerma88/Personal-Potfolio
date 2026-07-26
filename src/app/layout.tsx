@@ -15,6 +15,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: `${SITE_DATA.identity.name} — ${SITE_DATA.identity.role}`,
   description: SITE_DATA.identity.subhead,
+  icons: {
+    icon: '/favicon.svg',
+  },
   keywords: [
     'Full Stack Engineer',
     'AI Engineer',

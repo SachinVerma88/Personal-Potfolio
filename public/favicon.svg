@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Sachin Verma</title>
+  <defs>
+    <linearGradient id="accent" x1="14" y1="12" x2="49" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="30" y1="25" x2="47" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a7f3d0"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#09090b"/>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#38bdf8" stroke-opacity=".35" stroke-width="2"/>
+  <path d="M25 18h-7.5a6.5 6.5 0 0 0 0 13H22a6.5 6.5 0 0 1 0 13h-8" fill="none" stroke="url(#accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="m34 19 8 26 8-26" fill="none" stroke="url(#signal)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <circle cx="47.5" cy="16.5" r="3.5" fill="#38bdf8"/>
+</svg>
